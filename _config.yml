@@ -1,0 +1,19 @@
+# https://jekyllrb.com/docs/pagination/
+plugins: [jekyll-paginate]
+paginate: 5
+future: true
+
+# https://jekyllrb.com/docs/configuration/#front-matter-defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
