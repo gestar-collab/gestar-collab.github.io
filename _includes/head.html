@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="description"
+content="Ge-STAR Germanium-based Science and Technology Advancement Research">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/assets/logo/favicon/16x16.png">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css"><!--extra tuning-->
+<link rel="stylesheet" href="/syntax.css"><!--for syntax highlighting-->
+<script src="https://kit.fontawesome.com/4486ac33b7.js" crossorigin="anonymous"></script><!-- social media icons -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61659360-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-61659360-2');
+</script>
+<script> (function() {
+var cx = '016436339639358763322:zwbn0l8v3lc';
+var gcse = document.createElement('script');
+gcse.type = 'text/javascript';
+gcse.async = true;
+gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(gcse, s);
+})();
+</script>
+
+<!-- https://stackoverflow.com/questions/12131273/twitter-bootstrap-tabs-url-doesnt-change -->
+<script>
+$(function(){
+  var hash = window.location.hash;
+  hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+  $('.nav-pills a').click(function (e) {
+    $(this).tab('show');
+    var scrollmem = $('body').scrollTop() || $('html').scrollTop();
+    window.location.hash = this.hash;
+    $('html,body').scrollTop(scrollmem);
+  });
+});
+</script>
+
+<title>{% if page.title %}{{ page.title }}{% else %}Ge-STAR{% endif %}</title>
+</head>
+
+<body>

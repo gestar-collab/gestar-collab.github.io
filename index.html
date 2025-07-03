@@ -1,46 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ge-STAR Collaboration</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; }
-    header { background-color: #002b5c; color: white; padding: 1.5em; text-align: center; }
-    nav { background-color: #e1e1e1; padding: 0.5em; text-align: center; }
-    nav a { margin: 0 1em; text-decoration: none; color: #002b5c; font-weight: bold; }
-    main { padding: 2em; max-width: 1000px; margin: auto; }
-    footer { background-color: #f5f5f5; text-align: center; padding: 1em; font-size: 0.9em; margin-top: 2em; }
-  </style>
-</head>
-<body>
+---
+layout: index
+---
 
-  <header>
-    <h1>Ge-STAR Collaboration</h1>
-    <p>Germanium-Science Technology Advancement Research</p>
-  </header>
+<div class="featurette">
+  <img class="featurette-image pull-right" src="/assets/mission.png">
+  <h2 class="featurette-heading">Mission</h2>
+  <ul class="lead">
+    <li>To advance knowledge, research and discovery in fundamental physics by developing novel detectors that will improve the sensitivity of ton-scale DM and neutrino experiments.</li>
+    <li>To increase knowledge and advance frontier physics education and training for undergraduate STEM (science, technology, engineering, mathematics) majors, graduate students, post-docs, and early career faculty, and develop a diverse workforce in physics and engineering.</li>
+    <li>To improve global collaboration on Ge related technology through integrative global partnerships, anchored by best-in-class research facilities, resources, and expertise.</li>
+  </ul>
+</div>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">People</a>
-    <a href="#">Publications</a>
-    <a href="#">Contact</a>
-  </nav>
+<hr class="featurette-divider">
 
-  <main>
-    <h2>Welcome to Ge-STAR</h2>
-    <p>
-      The Ge-STAR (Germanium-Science Technology Advancement Research) collaboration focuses on developing advanced detector simulations and experimental analysis frameworks for cutting-edge nuclear and particle physics experiments.
-    </p>
-    <p>
-      Our work builds upon the success of the PIRE-GEMADARC initiative and expands international cooperation in detector development, simulation, and scientific outreach.
-    </p>
-  </main>
+<div class="row">
+  <div id="science-carousel" class="carousel slide col-md-6" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/3/31/COSMOS_3D_dark_matter_map.png">
+	<div class="carousel-caption">
+	  <a class="btn btn-lg btn-primary" href="index.html" role="button">Dark matter</a>
+	</div>
+      </div>
+      <div class="item">
+	<img src="http://wwwkm.phys.sci.osaka-u.ac.jp/en/research/img/r01_img01.gif">
+	<div class="carousel-caption">
+	  <a class="btn btn-lg btn-primary" href="index.html" role="button">Neutrinoless double beta decay</a>
+	</div>
+      </div>
+    </div><!--carousel-inner-->
+    <a class="left carousel-control" href="#science-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#science-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div><!-- carousel slide -->
+  <div class="col-md-6">
+    <h2>Science</h2>
+    <p class="lead">Dark matter. Neutrinoless double beta decay. Coherent
+    elastic neutrino-nucleus scattering. Neutrino magnetic moments. Frictional
+    charge...</p>
+    <a class="btn btn-default" href="/science" role="button">More &raquo;</a>
+  </div>
+</div>
 
-  <footer>
-    &copy; 2025 Ge-STAR Collaboration. All rights reserved.
-  </footer>
+<hr class="featurette-divider">
 
-</body>
-</html>
+<div class="featurette">
+  <img class="featurette-image pull-right" src="/assets/logos.png">
+  <h2 class="featurette-heading">Collaboration</h2>
+  <p class="lead">GEMADARC is a global partnership of 13 institutions across 5
+  countries. Meet the members and institutions from the U.S.A., Canada, China,
+  Germany, India and Taiwan on our collaboration page</p>
+  <a class="btn btn-default" href="/collaboration" role="button">Collaboration &raquo;</a>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row">
+  <div id="faculty-carousel" class="carousel slide col-md-6" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+	<img src="https://drive.google.com/uc?id=0BwM7XYhFgK7oYUppM2VhQndFakk">
+	<div class="carousel-caption">
+	  <a class="btn btn-lg btn-primary" href="index.html" role="button">MPPMU surface scanning station</a>
+	</div>
+      </div>
+      <div class="item">
+	<img src="https://drive.google.com/uc?id=0B3yvXEqPBERISVVFWkhIZWlHQms">
+	<div class="carousel-caption">
+	  <a class="btn btn-lg btn-primary" href="index.html" role="button">USD crystal grower</a>
+	</div>
+      </div>
+      <div class="item">
+	<img src="https://drive.google.com/uc?id=0BwM7XYhFgK7oNVpUaTJ0dmY1Mnc">
+	<div class="carousel-caption">
+	  <a class="btn btn-lg btn-primary" href="index.html" role="button">Texono 500g Ge detector</a>
+	</div>
+      </div>
+    </div><!--carousel-inner-->
+    <a class="left carousel-control" href="#faculty-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#faculty-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div><!-- carousel slide -->
+  <div class="col-md-6">
+    <h2>World Class Facilities</h2>
+    <p class="lead">Each institution of GEMADARC provides unique lab spaces and facilities to push Germanium semiconductor research forward. Check them out on the facilities page.</p>
+    <a class="btn btn-default" href="/facility" role="button">Facilities &raquo;</a>
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row">
+  <div class="col-md-6">
+    <h2>Educational oppertunities</h2>
+    <p class="lead">Scholarship and other educational opportunities provided by PIRE-GEMADARC.</p>
+    <a class="btn btn-default" href="/education" role="button">More &raquo;</a>
+  </div>
+  <div class="col-md-6">
+    <img src="http://www.usd.edu/-/media/images/arts-and-sciences/physics/physicsundergrad.ashx">
+  </div>
+</div>
