@@ -1,3 +1,6 @@
+## Liquid Nitrogen Cryostat
+<img width="1221" height="724" alt="Image" src="https://github.com/user-attachments/assets/fc8921eb-746b-4343-af1e-71964cc1a6e8" />
+
 ## Zone refinement equipment
 
 Zone Refining is a method of purifying germanium by segregating active impurities in the germanium based on their so-called Segregation Coefficient. This is how we produce High Purity Germanium at USD.
