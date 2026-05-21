@@ -1,7 +1,7 @@
 ---
 ---
 
-# Ge-STAR Collaboration Meeting 2026
+# Ge-STAR Collaboration Summer Meeting 2026
 
 The Ge-STAR Collaboration Meeting will be held on **July 13–14, 2026** at the **University of South Dakota (USD), Vermillion, South Dakota**.
 
