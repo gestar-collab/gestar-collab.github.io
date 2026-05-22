@@ -9,16 +9,18 @@ The Ge-STAR Collaboration Meeting will be held on **July 13–14, 2026** at the 
 
 ## Overview
 
-The Ge-STAR collaboration meeting will bring together faculty members, researchers, students, and collaborators working on germanium detector development, crystal growth, artificial intelligence integration, low-background physics, detector instrumentation, and related technologies.
+Ge-STAR (Germanium-based Science and Technology Advancement Research) is an NSF-supported statewide research incubator that integrates artificial intelligence (AI) with high-purity germanium (HPGe) crystal growth and detector development. The collaboration aims to advance technologies for dark matter detection, medical imaging, scientific instrumentation, and education through interdisciplinary research and institutional partnerships across South Dakota.
+
+The Ge-STAR Collaboration Summer Meeting 2026 will bring together faculty members, researchers, students, technical staff, and collaborators working in germanium detector technologies, AI-assisted materials research, low-background physics, detector instrumentation, and related scientific applications.
 
 The meeting will provide opportunities to:
 - Share recent scientific and technical progress
-- Discuss collaborative research activities
+- Discuss collaborative research and infrastructure development
 - Present student and faculty research updates
-- Coordinate future plans and milestones
-- Strengthen collaboration across participating institutions
-
----
+- Explore AI-driven approaches for Ge crystal growth and detector optimization
+- Strengthen workforce development and training activities
+- Coordinate future collaboration plans and milestones
+- Foster interdisciplinary engagement across participating institutions and external partners
 
 ## Meeting Objectives
 
@@ -48,24 +50,22 @@ USA
 
 ## Registration
 
-Registration information will be updated soon.
-
-[Register Here](#)
+Please use the link below to register for the meeting:
+[Register Here](https://docs.google.com/forms/d/e/1FAIpQLSd0afloJQa0RFfE0nyLwi6urCrk0xQHMim5S9Lw3pDwPbrW4w/viewform)
 
 ---
 
 ## Presentation and Slide Submission
 
-Presentation and slide submission details will be updated soon.
-
-[Submit Presentation Slides](#)
+Please use the link below to submit presentation information and presentation slides:
+[Submit Presentation Slides](https://docs.google.com/forms/d/e/1FAIpQLSc4nU-VLXokFrMB8_GXkxeW7mXW-Dg4_RXUMhpZAgWLjNudig/viewform?usp=publish-editor)
 
 ---
 
 ## Tentative Schedule
 
 | Date | Activity |
-|------|------|
+|------|----------|
 | July 13, 2026 | Collaboration updates and technical presentations |
 | July 13, 2026 | Student research talks and discussion sessions |
 | July 14, 2026 | Detector development and AI/ML sessions |
@@ -75,30 +75,31 @@ Presentation and slide submission details will be updated soon.
 
 ## Travel and Accommodation
 
-### Hotels
+### Hotel Information
 
-Participants may consider the following hotel options in Vermillion, South Dakota:
+A block of rooms has been reserved at **Best Western Vermillion Inn** for participants attending the Ge-STAR Collaboration Summer Meeting on **July 13–14, 2026**.
 
-#### Best Western Vermillion Inn
-Comfortable hotel located near the University of South Dakota campus with complimentary breakfast and parking.
+Participants must call and reserve their room by **June 29, 2026**.
 
-Website:  
-https://www.bestwestern.com/en_US/book/vermillion/hotel-rooms/best-western-vermillion-inn/propertyCode.42051.html
----
+When making the reservation, please mention that you are with the **“USD Physics Department”** to access the reserved room block.
 
-#### Red Roof Inn Vermillion – U of South Dakota
-Convenient and affordable accommodation option located near campus and downtown Vermillion.
+### Reserved Room Block
 
-Website:  
-https://www.redroof.com/property/sd/vermillion/RRI507
+| Room Type | Number of Rooms | Intended Use | Rate |
+|-----------|-----------------|--------------|------|
+| Single rooms | 7 | Faculty | $110 per night |
+| Double rooms | 8 | Students sharing rooms | $120 per night, split between two people |
 
----
+### Hotel Link
 
-#### Holiday Inn Express & Suites Vermillion
-Modern hotel with complimentary breakfast, fitness center, and business facilities.
+Best Western Vermillion Inn: [Click Here](https://www.bestwestern.com/en_US/book/hotels-in-vermillion/best-western-vermillion-inn/propertyCode.42051.html)
 
-Website:  
-https://www.ihg.com/holidayinnexpress/hotels/us/en/vermillion/vrmns/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-VRMNS
+### Hotel Contact
+
+For hotel-related questions, please contact:
+
+[Austin Warren](mailto:austin.warren@coyotes.usd.edu)
+
 ---
 
 ### Transportation
@@ -107,7 +108,7 @@ Transportation assistance may be available through the USD Shuttle Service.
 
 For additional transportation information, scheduling, or assistance, please contact:
 
-**Kunming.Dong@coyotes.usd.edu**
+[Kunming Dong](mailto:Kunming.Dong@coyotes.usd.edu)
 
 ---
 
@@ -121,35 +122,27 @@ Additional parking instructions will be provided closer to the meeting dates.
 
 ### Campus Directions
 
-University of South Dakota campus map:
+University of South Dakota campus map: [Click Here](https://www.usd.edu/campus-map.html)
 
-https://www.usd.edu/campus-map.html
 ---
 
 ### Local Travel Recommendations
 
 Participants visiting Vermillion may also explore nearby attractions and locations:
 
-- Missouri National Recreational River  
-  https://www.nps.gov/mnrr/index.htm
+- Missouri National Recreational River: [Click Here](https://www.nps.gov/mnrr/index.htm)
+- Spirit Mound Historic Prairie: [Click Here](https://gfp.sd.gov/parks/detail/spirit-mound-historic-prairie/)
+- National Music Museum: [Click Here](https://www.nmmusd.org/)
+- Downtown Vermillion Information: [Click Here](https://visitvermillion.com/)
+- South Dakota Travel Information: [Click Here](https://www.travelsouthdakota.com/)
 
-- Spirit Mound Historic Prairie  
-  https://gfp.sd.gov/parks/detail/spirit-mound-historic-prairie/
-
-- National Music Museum  
-  https://www.nmmusd.org/
-
-- Downtown Vermillion Information  
-  https://visitvermillion.com/
-
-- South Dakota Travel Information  
-  https://www.travelsouthdakota.com/
+---
 
 ## Contact
 
 For questions regarding the meeting, please contact the Ge-STAR collaboration team.
 
-Email: Dongming.Mei@usd.edu
+Email: [Dongming Mei](mailto:Dongming.Mei@usd.edu)
 
 ---
 
