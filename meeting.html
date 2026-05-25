@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ge-STAR Collaboration Summer Meeting 2026</title>
+  <style>
+    :root {
+      --blue: #1f6fa5;
+      --dark-blue: #0d3558;
+      --light-bg: #eef5fb;
+      --orange: #d97800;
+      --border: #d8d8d8;
+      --text: #1e1e1e;
+      --muted: #666;
+      --event-bg: #f0c796;
+      --button-gray: #8d8d8d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: white;
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      padding: 24px 12%;
+      gap: 28px;
+    }
+
+    .logo {
+      width: 106px;
+      height: 106px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 34px;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.16);
+    }
+
+    .title h1 {
+      font-size: 34px;
+      line-height: 1.12;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+
+    .event-info {
+      background: var(--light-bg);
+      border-bottom: 1px solid #cddbe7;
+      padding: 14px 12%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .event-info .date {
+      color: var(--dark-blue);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .event-info .timezone {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .search-box {
+      width: 330px;
+      max-width: 100%;
+      background: #fff;
+      border: 1px solid #cfd8df;
+      border-radius: 5px;
+      padding: 12px 14px;
+      color: #999;
+      font-size: 16px;
+    }
+
+    .notice {
+      text-align: center;
+      font-weight: bold;
+      color: #062744;
+      background: #f2f8fd;
+      border-bottom: 1px solid #dde9f2;
+      padding: 11px;
+      font-size: 18px;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: 285px minmax(0, 1fr);
+      gap: 42px;
+      padding: 34px 12% 70px;
+    }
+
+    .sidebar {
+      border: 1px solid var(--border);
+      background: #f7f7f7;
+      align-self: start;
+    }
+
+    .sidebar a, .sidebar .section-title {
+      display: block;
+      text-decoration: none;
+      color: #0c4b7a;
+      padding: 12px 18px;
+      font-size: 18px;
+      border-bottom: 1px solid #e2e2e2;
+    }
+
+    .sidebar .section-title {
+      color: #0c4b7a;
+      font-weight: 500;
+      background: #f3f3f3;
+    }
+
+    .sidebar .indent {
+      padding-left: 38px;
+      font-size: 17px;
+    }
+
+    .sidebar .active {
+      background: #d7d7d7;
+      color: #073b64;
+    }
+
+    .content { max-width: 1050px; }
+
+    .content h2 {
+      color: var(--orange);
+      font-size: 30px;
+      font-weight: 400;
+      margin: 10px 0 2px;
+    }
+
+    .content h3 {
+      font-size: 24px;
+      font-weight: 400;
+      margin: 0 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 18px 0 30px;
+    }
+
+    .orange-heading {
+      color: var(--orange);
+      font-size: 26px;
+      font-weight: 400;
+      margin: 28px 0 8px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.55;
+      margin-top: 0;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1px;
+      margin: 18px 0 10px;
+    }
+
+    .actions button {
+      border: 0;
+      background: var(--button-gray);
+      color: #fff;
+      padding: 11px 18px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .actions button:first-child { border-radius: 5px 0 0 5px; }
+    .actions button:last-child { border-radius: 0 5px 5px 0; }
+
+    .timetable-title {
+      color: var(--orange);
+      font-size: 30px;
+      font-weight: 400;
+      margin: 44px 0 8px;
+      border-bottom: 1px solid #e3e3e3;
+      padding-bottom: 5px;
+    }
+
+    .date-tabs {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      margin-top: 30px;
+      border-bottom: 1px solid #bdbdbd;
+      color: #77802d;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .tab {
+      border: 1px solid #aaa;
+      border-bottom: 0;
+      padding: 12px 14px 10px;
+      background: #fff;
+      color: #23384d;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: -1px;
+    }
+
+    .timetable {
+      position: relative;
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      min-height: 500px;
+    }
+
+    .time-axis {
+      position: relative;
+      border-right: 0;
+      color: #2d4054;
+      font-size: 16px;
+    }
+
+    .time-label {
+      position: absolute;
+      right: 18px;
+      transform: translateY(-10px);
+    }
+
+    .label-9am { top: 178px; }
+    .label-11am { top: 356px; }
+    .label-1pm { top: 500px; }
+
+    .schedule-area {
+      position: relative;
+      border-top: 1px solid #e1e1e1;
+      background: repeating-linear-gradient(
+        to bottom,
+        #ffffff 0,
+        #ffffff 87px,
+        #e7e7e7 88px,
+        #ffffff 89px
+      );
+      min-height: 520px;
+    }
+
+    .event-card {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      min-height: 500px;
+      background: var(--event-bg);
+      border: 1px solid #d3a66f;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      padding: 10px 12px;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .event-card strong { font-weight: 700; }
+
+    .event-footer {
+      position: absolute;
+      left: 12px;
+      right: 14px;
+      bottom: 9px;
+      display: flex;
+      justify-content: space-between;
+      font-style: italic;
+    }
+
+    .event-footer span:last-child {
+      font-style: normal;
+      color: #000;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .info-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 16px;
+      background: #fafafa;
+    }
+
+    .info-card h4 {
+      margin: 0 0 8px;
+      color: #0c4b7a;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 9px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 15px;
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .topbar, .event-info, .page { padding-left: 24px; padding-right: 24px; }
+      .page { grid-template-columns: 1fr; }
+      .event-info { flex-direction: column; align-items: flex-start; }
+      .title h1 { font-size: 28px; }
+      .logo { width: 82px; height: 82px; font-size: 28px; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .actions { justify-content: flex-start; flex-wrap: wrap; }
+      .timetable { grid-template-columns: 60px 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Ge</div>
+    <div class="title">
+      <h1>Ge-STAR Collaboration Summer Meeting<br />2026</h1>
+    </div>
+  </header>
+
+  <section class="event-info">
+    <div class="date">
+      July 13, 2026 to July 14, 2026<br />
+      University of South Dakota, Vermillion, South Dakota<br />
+      <span class="timezone">America/Chicago timezone</span>
+    </div>
+    <input class="search-box" placeholder="Enter your search term" />
+  </section>
+
+  <div class="notice">[ Ge-STAR Collaboration Summer Meeting 2026 ]</div>
+
+  <main class="page">
+    <nav class="sidebar">
+      <div class="section-title">Ge-STAR Meeting</div>
+      <a href="#overview">Overview</a>
+      <a href="#program">Scientific Program</a>
+      <a class="indent" href="#updates">Collaboration Updates</a>
+      <a class="indent" href="#student">Student Research Talks</a>
+      <a class="indent" href="#detectors">Detector Development</a>
+      <a class="indent" href="#ai">AI/ML Sessions</a>
+      <a class="active" href="#timetable">Timetable</a>
+      <a href="#registration">Registration</a>
+      <a href="#slides">Slide Submission</a>
+      <a href="#venue">Venue</a>
+      <a href="#accommodation">Accommodation</a>
+      <a href="#travel">Travel</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="content">
+      <section id="overview">
+        <h2>Session</h2>
+        <h3>Overview</h3>
+        <div class="meta">
+          🕘 July 13–14, 2026<br />
+          📍 Department of Physics, University of South Dakota, Vermillion, SD
+        </div>
+
+        <div class="orange-heading">Description</div>
+        <p>
+          Ge-STAR, Germanium-based Science and Technology Advancement Research, is an NSF-supported statewide research incubator integrating artificial intelligence with high-purity germanium crystal growth and detector development.
+        </p>
+        <p>
+          The meeting will bring together faculty members, researchers, students, technical staff, and collaborators working in germanium detector technologies, AI-assisted materials research, low-background physics, detector instrumentation, medical imaging, scientific instrumentation, and education.
+        </p>
+
+        <div class="mini-grid">
+          <div class="info-card" id="registration">
+            <h4>Registration</h4>
+            <p>Please use the registration form for meeting participation.</p>
+            <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd0afloJQa0RFfE0nyLwi6urCrk0xQHMim5S9Lw3pDwPbrW4w/viewform">Register Here</a>
+          </div>
+          <div class="info-card" id="slides">
+            <h4>Presentation and Slide Submission</h4>
+            <p>Please submit presentation information and slides using the submission form.</p>
+            <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc4nU-VLXokFrMB8_GXkxeW7mXW-Dg4_RXUMhpZAgWLjNudig/viewform?usp=publish-editor">Submit Slides</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="timetable">
+        <div class="timetable-title">Timetable</div>
+
+        <div class="date-tabs">
+          <span>‹</span>
+          <div class="tab">Mon 07/13</div>
+          <span style="margin-left:auto;">›</span>
+        </div>
+
+        <div class="actions" aria-label="Timetable tools">
+          <button>Print</button>
+          <button>PDF</button>
+          <button>Full screen</button>
+          <button>Detailed view</button>
+          <button>Filter</button>
+        </div>
+
+        <div class="timetable">
+          <div class="time-axis">
+            <div class="time-label" style="top: 0;">09:00</div>
+            <div class="time-label label-9am">11:00</div>
+            <div class="time-label label-11am">13:00</div>
+            <div class="time-label label-1pm">15:00</div>
+          </div>
+          <div class="schedule-area">
+            <div class="event-card">
+              <strong>Ge-STAR Collaboration Meeting: Day 1</strong><br />
+              Collaboration updates, technical presentations, student research talks, and discussion sessions.
+              <br /><br />
+              Topics include HPGe crystal growth and characterization, detector development, low-background detector technologies, AI/ML applications in detector physics, workforce development, and future coordination.
+              <div class="event-footer">
+                <span>University of South Dakota</span>
+                <span>09:00 - 15:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="date-tabs" style="margin-top:42px;">
+          <span>‹</span>
+          <div class="tab">Tue 07/14</div>
+          <span style="margin-left:auto;">›</span>
+        </div>
+
+        <div class="actions" aria-label="Timetable tools">
+          <button>Print</button>
+          <button>PDF</button>
+          <button>Full screen</button>
+          <button>Detailed view</button>
+          <button>Filter</button>
+        </div>
+
+        <div class="timetable">
+          <div class="time-axis">
+            <div class="time-label" style="top: 0;">09:00</div>
+            <div class="time-label label-9am">11:00</div>
+            <div class="time-label label-11am">13:00</div>
+            <div class="time-label label-1pm">15:00</div>
+          </div>
+          <div class="schedule-area">
+            <div class="event-card">
+              <strong>Ge-STAR Collaboration Meeting: Day 2</strong><br />
+              Detector development sessions, AI/ML sessions, future planning, collaboration discussions, and meeting wrap-up.
+              <br /><br />
+              The detailed itemized agenda, invited talks, contributed talks, and student presentation schedule will be posted here after final confirmation.
+              <div class="event-footer">
+                <span>University of South Dakota</span>
+                <span>09:00 - 15:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="accommodation">
+        <div class="orange-heading">Travel and Accommodation</div>
+        <p>
+          A block of rooms has been reserved at Best Western Vermillion Inn. Participants must call and reserve their room by June 29, 2026 and mention “USD Physics Department” to access the reserved room block.
+        </p>
+        <p>
+          Room block: 7 single rooms for faculty at $110 per night, and 8 double rooms for students sharing rooms at $120 per night split between two people.
+        </p>
+      </section>
+
+      <section id="contact">
+        <div class="orange-heading">Contact</div>
+        <p>
+          For questions regarding the meeting, please contact Dongming Mei at Dongming.Mei@usd.edu. For hotel-related questions, contact Austin Warren at austin.warren@coyotes.usd.edu. For transportation assistance, contact Kunming Dong at Kunming.Dong@coyotes.usd.edu.
+        </p>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
