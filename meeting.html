@@ -110,21 +110,30 @@
       border: 1px solid var(--border);
       background: #f7f7f7;
       align-self: start;
+      position: sticky;
+      top: 18px;
     }
 
-    .sidebar a, .sidebar .section-title {
+    .sidebar button, .sidebar .section-title {
       display: block;
+      width: 100%;
+      text-align: left;
       text-decoration: none;
       color: #0c4b7a;
       padding: 12px 18px;
       font-size: 18px;
+      border: 0;
       border-bottom: 1px solid #e2e2e2;
+      background: #f7f7f7;
+      cursor: pointer;
+      font-family: inherit;
     }
 
     .sidebar .section-title {
       color: #0c4b7a;
       font-weight: 500;
       background: #f3f3f3;
+      cursor: default;
     }
 
     .sidebar .indent {
@@ -132,12 +141,15 @@
       font-size: 17px;
     }
 
-    .sidebar .active {
+    .sidebar button.active {
       background: #d7d7d7;
       color: #073b64;
     }
 
     .content { max-width: 1050px; }
+
+    .content-section { display: none; }
+    .content-section.active { display: block; }
 
     .content h2 {
       color: var(--orange);
@@ -168,11 +180,14 @@
       margin: 28px 0 8px;
     }
 
-    p {
+    p, li {
       font-size: 18px;
       line-height: 1.55;
-      margin-top: 0;
     }
+
+    p { margin-top: 0; }
+
+    a { color: #0c4b7a; }
 
     .actions {
       display: flex;
@@ -197,7 +212,7 @@
       color: var(--orange);
       font-size: 30px;
       font-weight: 400;
-      margin: 44px 0 8px;
+      margin: 10px 0 8px;
       border-bottom: 1px solid #e3e3e3;
       padding-bottom: 5px;
     }
@@ -234,7 +249,6 @@
 
     .time-axis {
       position: relative;
-      border-right: 0;
       color: #2d4054;
       font-size: 16px;
     }
@@ -245,20 +259,14 @@
       transform: translateY(-10px);
     }
 
-    .label-9am { top: 178px; }
-    .label-11am { top: 356px; }
-    .label-1pm { top: 500px; }
+    .label-11 { top: 178px; }
+    .label-13 { top: 356px; }
+    .label-15 { top: 500px; }
 
     .schedule-area {
       position: relative;
       border-top: 1px solid #e1e1e1;
-      background: repeating-linear-gradient(
-        to bottom,
-        #ffffff 0,
-        #ffffff 87px,
-        #e7e7e7 88px,
-        #ffffff 89px
-      );
+      background: repeating-linear-gradient(to bottom, #ffffff 0, #ffffff 87px, #e7e7e7 88px, #ffffff 89px);
       min-height: 520px;
     }
 
@@ -277,8 +285,6 @@
       line-height: 1.45;
     }
 
-    .event-card strong { font-weight: 700; }
-
     .event-footer {
       position: absolute;
       left: 12px;
@@ -294,24 +300,18 @@
       color: #000;
     }
 
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 22px;
-    }
-
-    .info-card {
+    .card {
       border: 1px solid var(--border);
       border-radius: 4px;
-      padding: 16px;
+      padding: 18px;
       background: #fafafa;
+      margin: 16px 0;
     }
 
-    .info-card h4 {
+    .card h4 {
       margin: 0 0 8px;
       color: #0c4b7a;
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .btn {
@@ -326,29 +326,44 @@
       margin-top: 8px;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 17px;
+    }
+
+    th, td {
+      border: 1px solid #d6d6d6;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th { background: #eef5fb; color: #0d3558; }
+
     @media (max-width: 980px) {
       .topbar, .event-info, .page { padding-left: 24px; padding-right: 24px; }
       .page { grid-template-columns: 1fr; }
       .event-info { flex-direction: column; align-items: flex-start; }
       .title h1 { font-size: 28px; }
       .logo { width: 82px; height: 82px; font-size: 28px; }
-      .mini-grid { grid-template-columns: 1fr; }
       .actions { justify-content: flex-start; flex-wrap: wrap; }
       .timetable { grid-template-columns: 60px 1fr; }
+      .sidebar { position: static; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
-    <div class="logo">Ge</div>
+    <div class="logo">Ge-STAR</div>
     <div class="title">
-      <h1>Ge-STAR Collaboration Summer Meeting<br />2026</h1>
+      <h1>Summer Meeting<br />2026</h1>
     </div>
   </header>
 
   <section class="event-info">
     <div class="date">
-      July 13, 2026 to July 14, 2026<br />
+      July 13 to July 14, 2026<br />
       University of South Dakota, Vermillion, South Dakota<br />
       <span class="timezone">America/Chicago timezone</span>
     </div>
@@ -360,143 +375,194 @@
   <main class="page">
     <nav class="sidebar">
       <div class="section-title">Ge-STAR Meeting</div>
-      <a href="#overview">Overview</a>
-      <a href="#program">Scientific Program</a>
-      <a class="indent" href="#updates">Collaboration Updates</a>
-      <a class="indent" href="#student">Student Research Talks</a>
-      <a class="indent" href="#detectors">Detector Development</a>
-      <a class="indent" href="#ai">AI/ML Sessions</a>
-      <a class="active" href="#timetable">Timetable</a>
-      <a href="#registration">Registration</a>
-      <a href="#slides">Slide Submission</a>
-      <a href="#venue">Venue</a>
-      <a href="#accommodation">Accommodation</a>
-      <a href="#travel">Travel</a>
-      <a href="#contact">Contact</a>
+      <button class="nav-btn active" data-section="overview">Overview</button>
+      <button class="nav-btn" data-section="program">Scientific Program</button>
+      <button class="nav-btn indent" data-section="updates">Collaboration Updates</button>
+      <button class="nav-btn indent" data-section="student">Student Research Talks</button>
+      <button class="nav-btn indent" data-section="detectors">Detector Development</button>
+      <button class="nav-btn indent" data-section="ai">AI/ML Sessions</button>
+      <button class="nav-btn" data-section="timetable">Timetable</button>
+      <button class="nav-btn" data-section="registration">Registration</button>
+      <button class="nav-btn" data-section="slides">Slide Submission</button>
+      <button class="nav-btn" data-section="accommodation">Accommodation</button>
+      <button class="nav-btn" data-section="travel">Travel</button>
+      <button class="nav-btn" data-section="contact">Contact</button>
     </nav>
 
     <section class="content">
-      <section id="overview">
+      <section id="overview" class="content-section active">
         <h2>Session</h2>
         <h3>Overview</h3>
         <div class="meta">
           🕘 July 13–14, 2026<br />
-          📍 Department of Physics, University of South Dakota, Vermillion, SD
+          📍 Patterson Hall 117, University of South Dakota, Vermillion, SD
         </div>
-
         <div class="orange-heading">Description</div>
-        <p>
-          Ge-STAR, Germanium-based Science and Technology Advancement Research, is an NSF-supported statewide research incubator integrating artificial intelligence with high-purity germanium crystal growth and detector development.
-        </p>
-        <p>
-          The meeting will bring together faculty members, researchers, students, technical staff, and collaborators working in germanium detector technologies, AI-assisted materials research, low-background physics, detector instrumentation, medical imaging, scientific instrumentation, and education.
-        </p>
-
-        <div class="mini-grid">
-          <div class="info-card" id="registration">
-            <h4>Registration</h4>
-            <p>Please use the registration form for meeting participation.</p>
-            <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd0afloJQa0RFfE0nyLwi6urCrk0xQHMim5S9Lw3pDwPbrW4w/viewform">Register Here</a>
-          </div>
-          <div class="info-card" id="slides">
-            <h4>Presentation and Slide Submission</h4>
-            <p>Please submit presentation information and slides using the submission form.</p>
-            <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc4nU-VLXokFrMB8_GXkxeW7mXW-Dg4_RXUMhpZAgWLjNudig/viewform?usp=publish-editor">Submit Slides</a>
-          </div>
-        </div>
+        <p>Ge-STAR, Germanium-based Science and Technology Advancement Research, is an NSF-supported statewide research incubator integrating artificial intelligence with high-purity germanium crystal growth and detector development.</p>
+        <p>The Ge-STAR Collaboration Summer Meeting 2026 will bring together faculty members, researchers, students, technical staff, and collaborators working in germanium detector technologies, AI-assisted materials research, low-background physics, detector instrumentation, medical imaging, scientific instrumentation, and education.</p>
       </section>
 
-      <section id="timetable">
+      <section id="program" class="content-section">
+        <h2>Session</h2>
+        <h3>Scientific Program</h3>
+        <p>The meeting will provide opportunities to share recent scientific and technical progress, discuss collaborative research and infrastructure development, present student and faculty research updates, explore AI-driven approaches for Ge crystal growth and detector optimization, and coordinate future collaboration plans.</p>
+        <ul>
+          <li>Collaboration updates</li>
+          <li>Detector development discussions</li>
+          <li>HPGe crystal growth and characterization</li>
+          <li>AI/ML applications in detector physics</li>
+          <li>Low-background detector technologies</li>
+          <li>Student presentations</li>
+          <li>Future planning and coordination</li>
+        </ul>
+      </section>
+
+      <section id="updates" class="content-section">
+        <h2>Session</h2>
+        <h3>Collaboration Updates</h3>
+        <p>This session will include updates from participating institutions, research progress reports, infrastructure updates, and coordination of Ge-STAR milestones.</p>
+      </section>
+
+      <section id="student" class="content-section">
+        <h2>Session</h2>
+        <h3>Student Research Talks</h3>
+        <p>Students and early-career researchers will present updates on germanium detector development, AI/ML analysis, materials characterization, and related Ge-STAR research activities.</p>
+      </section>
+
+      <section id="detectors" class="content-section">
+        <h2>Session</h2>
+        <h3>Detector Development</h3>
+        <p>This session will focus on HPGe detector technologies, crystal growth and characterization, detector instrumentation, low-background detector technologies, and detector optimization.</p>
+      </section>
+
+      <section id="ai" class="content-section">
+        <h2>Session</h2>
+        <h3>AI/ML Sessions</h3>
+        <p>This session will focus on artificial intelligence and machine learning methods for Ge crystal growth, detector optimization, data analysis, materials discovery, and interdisciplinary applications.</p>
+      </section>
+
+      <section id="timetable" class="content-section">
         <div class="timetable-title">Timetable</div>
-
-        <div class="date-tabs">
-          <span>‹</span>
-          <div class="tab">Mon 07/13</div>
-          <span style="margin-left:auto;">›</span>
-        </div>
-
-        <div class="actions" aria-label="Timetable tools">
-          <button>Print</button>
-          <button>PDF</button>
-          <button>Full screen</button>
-          <button>Detailed view</button>
-          <button>Filter</button>
-        </div>
-
+        <div class="date-tabs"><span>‹</span><div class="tab">Mon 07/13</div><span style="margin-left:auto;">›</span></div>
+        <div class="actions"><button>Print</button><button>PDF</button><button>Full screen</button><button>Detailed view</button><button>Filter</button></div>
         <div class="timetable">
           <div class="time-axis">
             <div class="time-label" style="top: 0;">09:00</div>
-            <div class="time-label label-9am">11:00</div>
-            <div class="time-label label-11am">13:00</div>
-            <div class="time-label label-1pm">15:00</div>
+            <div class="time-label label-11">11:00</div>
+            <div class="time-label label-13">13:00</div>
+            <div class="time-label label-15">15:00</div>
           </div>
           <div class="schedule-area">
             <div class="event-card">
               <strong>Ge-STAR Collaboration Meeting: Day 1</strong><br />
-              Collaboration updates, technical presentations, student research talks, and discussion sessions.
-              <br /><br />
+              Collaboration updates, technical presentations, student research talks, and discussion sessions.<br /><br />
               Topics include HPGe crystal growth and characterization, detector development, low-background detector technologies, AI/ML applications in detector physics, workforce development, and future coordination.
-              <div class="event-footer">
-                <span>University of South Dakota</span>
-                <span>09:00 - 15:00</span>
-              </div>
+              <div class="event-footer"><span>University of South Dakota</span><span>09:00 - 15:00</span></div>
             </div>
           </div>
         </div>
 
-        <div class="date-tabs" style="margin-top:42px;">
-          <span>‹</span>
-          <div class="tab">Tue 07/14</div>
-          <span style="margin-left:auto;">›</span>
-        </div>
-
-        <div class="actions" aria-label="Timetable tools">
-          <button>Print</button>
-          <button>PDF</button>
-          <button>Full screen</button>
-          <button>Detailed view</button>
-          <button>Filter</button>
-        </div>
-
+        <div class="date-tabs" style="margin-top:42px;"><span>‹</span><div class="tab">Tue 07/14</div><span style="margin-left:auto;">›</span></div>
+        <div class="actions"><button>Print</button><button>PDF</button><button>Full screen</button><button>Detailed view</button><button>Filter</button></div>
         <div class="timetable">
           <div class="time-axis">
             <div class="time-label" style="top: 0;">09:00</div>
-            <div class="time-label label-9am">11:00</div>
-            <div class="time-label label-11am">13:00</div>
-            <div class="time-label label-1pm">15:00</div>
+            <div class="time-label label-11">11:00</div>
+            <div class="time-label label-13">13:00</div>
+            <div class="time-label label-15">15:00</div>
           </div>
           <div class="schedule-area">
             <div class="event-card">
               <strong>Ge-STAR Collaboration Meeting: Day 2</strong><br />
-              Detector development sessions, AI/ML sessions, future planning, collaboration discussions, and meeting wrap-up.
-              <br /><br />
+              Detector development sessions, AI/ML sessions, future planning, collaboration discussions, and meeting wrap-up.<br /><br />
               The detailed itemized agenda, invited talks, contributed talks, and student presentation schedule will be posted here after final confirmation.
-              <div class="event-footer">
-                <span>University of South Dakota</span>
-                <span>09:00 - 15:00</span>
-              </div>
+              <div class="event-footer"><span>University of South Dakota</span><span>09:00 - 15:00</span></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="accommodation">
-        <div class="orange-heading">Travel and Accommodation</div>
-        <p>
-          A block of rooms has been reserved at Best Western Vermillion Inn. Participants must call and reserve their room by June 29, 2026 and mention “USD Physics Department” to access the reserved room block.
-        </p>
-        <p>
-          Room block: 7 single rooms for faculty at $110 per night, and 8 double rooms for students sharing rooms at $120 per night split between two people.
-        </p>
+      <section id="registration" class="content-section">
+        <h2>Session</h2>
+        <h3>Registration</h3>
+        <p>Please use the link below to register for the Ge-STAR Collaboration Summer Meeting 2026.</p>
+        <a class="btn" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSd0afloJQa0RFfE0nyLwi6urCrk0xQHMim5S9Lw3pDwPbrW4w/viewform">Register Here</a>
       </section>
 
-      <section id="contact">
-        <div class="orange-heading">Contact</div>
-        <p>
-          For questions regarding the meeting, please contact Dongming Mei at Dongming.Mei@usd.edu. For hotel-related questions, contact Austin Warren at austin.warren@coyotes.usd.edu. For transportation assistance, contact Kunming Dong at Kunming.Dong@coyotes.usd.edu.
-        </p>
+      <section id="slides" class="content-section">
+        <h2>Session</h2>
+        <h3>Presentation and Slide Submission</h3>
+        <p>Please use the link below to submit presentation information and presentation slides.</p>
+        <a class="btn" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc4nU-VLXokFrMB8_GXkxeW7mXW-Dg4_RXUMhpZAgWLjNudig/viewform?usp=publish-editor">Submit Presentation Slides</a>
+      </section>
+
+      <section id="accommodation" class="content-section">
+        <h2>Session</h2>
+        <h3>Accommodation</h3>
+        <div class="card">
+          <h4>Best Western Vermillion Inn</h4>
+          <p>A block of rooms has been reserved at <strong>Best Western Vermillion Inn</strong> for participants attending the Ge-STAR Collaboration Summer Meeting on July 13–14, 2026.</p>
+          <p>Participants must call and reserve their room by <strong>June 29, 2026</strong>. When making the reservation, please mention <strong>“USD Physics Department”</strong> to access the reserved room block.</p>
+          <a class="btn" target="_blank" href="https://www.bestwestern.com/en_US/book/hotels-in-vermillion/best-western-vermillion-inn/propertyCode.42051.html">Hotel Information</a>
+        </div>
+        <table>
+          <tr><th>Room Type</th><th>Number of Rooms</th><th>Intended Use</th><th>Rate</th></tr>
+          <tr><td>Single rooms</td><td>7</td><td>Faculty</td><td>$110 per night</td></tr>
+          <tr><td>Double rooms</td><td>8</td><td>Students sharing rooms</td><td>$120 per night, split between two people</td></tr>
+        </table>
+        <p>For hotel-related questions, contact <a href="mailto:austin.warren@coyotes.usd.edu">Austin Warren</a>.</p>
+      </section>
+
+      <section id="travel" class="content-section">
+        <h2>Session</h2>
+        <h3>Travel</h3>
+        <p>Transportation assistance may be available through the USD Shuttle Service. For transportation information, scheduling, or assistance, please contact <a href="mailto:Kunming.Dong@coyotes.usd.edu">Kunming Dong</a>.</p>
+        <p>Parking information and visitor parking requests will be coordinated through the Ge-STAR USD organizing team. Additional parking instructions will be provided closer to the meeting dates.</p>
+        <a class="btn" target="_blank" href="https://www.usd.edu/campus-map.html">USD Campus Map</a>
+        <a class="btn" target="_blank" href="https://visitvermillion.com/">Visit Vermillion</a>
+      </section>
+
+      <section id="contact" class="content-section">
+        <h2>Session</h2>
+        <h3>Contact</h3>
+        <p>For questions regarding the meeting, please contact the Ge-STAR collaboration team.</p>
+        <div class="card">
+          <h4>Meeting Contact</h4>
+          <p>Dongming Mei</p>
+          <a class="btn" href="mailto:Dongming.Mei@usd.edu?subject=Ge-STAR%20Collaboration%20Summer%20Meeting%202026">Email Dongming Mei</a>
+        </div>
+        <div class="card">
+          <h4>Hotel Contact</h4>
+          <p>Austin Warren</p>
+          <a class="btn" href="mailto:austin.warren@coyotes.usd.edu?subject=Ge-STAR%20Meeting%20Hotel%20Question">Email Austin Warren</a>
+        </div>
+        <div class="card">
+          <h4>Transportation Contact</h4>
+          <p>Kunming Dong</p>
+          <a class="btn" href="mailto:Kunming.Dong@coyotes.usd.edu?subject=Ge-STAR%20Meeting%20Transportation%20Question">Email Kunming Dong</a>
+        </div>
       </section>
     </section>
   </main>
+
+  <script>
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const sections = document.querySelectorAll('.content-section');
+
+    navButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-section');
+
+        navButtons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        sections.forEach((section) => {
+          section.classList.toggle('active', section.id === target);
+        });
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
